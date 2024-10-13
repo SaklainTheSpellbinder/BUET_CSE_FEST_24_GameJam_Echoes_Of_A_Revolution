@@ -14,3 +14,7 @@ config/name="Noobies GamJam Coolest Team"
 run/main_scene="res://scenes/background.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
