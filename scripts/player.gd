@@ -23,6 +23,8 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if not get_parent().game_running:
 			animated_sprite_2d.animation="idle"
+		elif Input.is_action_pressed("kill"):
+			animated_sprite_2d.play("kill")
 		else:
 			$NormalCol.disabled=false
 			if Input.is_action_pressed("ui_down") :
