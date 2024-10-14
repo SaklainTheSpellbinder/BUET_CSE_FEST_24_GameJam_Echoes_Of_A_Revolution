@@ -21,17 +21,20 @@ func _physics_process(delta: float) -> void:
 	
 	
 	if is_on_floor():
-		$NormalCol.disabled=false
-		if Input.is_action_pressed("ui_down") :
-			$NormalCol.disabled=true
-			animated_sprite_2d.play("duck")
-		elif direction==0:
-			if Input.is_action_pressed("kill"):
-				animated_sprite_2d.play("kill")
-			else:
-				animated_sprite_2d.animation="idle"
+		if not get_parent().game_running:
+			animated_sprite_2d.animation="idle"
 		else:
-			animated_sprite_2d.animation="run"
+			$NormalCol.disabled=false
+			if Input.is_action_pressed("ui_down") :
+				$NormalCol.disabled=true
+				animated_sprite_2d.play("duck")
+			elif direction==0:
+				if Input.is_action_pressed("kill"):
+					animated_sprite_2d.play("kill")
+				else:
+					animated_sprite_2d.animation="idle"
+			else:
+				animated_sprite_2d.animation="run"
 	else:
 		animated_sprite_2d.play("jump")		
 		
