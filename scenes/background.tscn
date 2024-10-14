@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckmnh0vi8mcg"]
+[gd_scene load_steps=7 format=3 uid="uid://ckmnh0vi8mcg"]
 
 [ext_resource type="Texture2D" uid="uid://bh7emx02vke0x" path="res://assets/free-city-backgrounds-pixel-art/city 4/1.png" id="1_gb4td"]
 [ext_resource type="Texture2D" uid="uid://dt5810k117tl6" path="res://assets/free-city-backgrounds-pixel-art/city 4/2.png" id="2_yycw6"]
@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cwbnuuugblqc8" path="res://assets/free-city-backgrounds-pixel-art/city 4/4.png" id="4_27mrf"]
 [ext_resource type="Texture2D" uid="uid://b5wph0xqgf4y7" path="res://assets/free-city-backgrounds-pixel-art/city 4/5.png" id="5_84fnd"]
 [ext_resource type="Texture2D" uid="uid://dinc3i4nwbk63" path="res://assets/free-city-backgrounds-pixel-art/city 4/7.png" id="6_8xccr"]
-[ext_resource type="Texture2D" uid="uid://csdqb6ylog0an" path="res://assets/free-city-backgrounds-pixel-art/city 4/8.png" id="7_4pqu2"]
 
 [node name="Background" type="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
 scale = Vector2(2, 2)
 texture = ExtResource("1_gb4td")
 centered = false
@@ -20,6 +20,7 @@ motion_scale = Vector2(0.6, 1)
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-1, 1)
 scale = Vector2(2, 2)
 texture = ExtResource("2_yycw6")
 centered = false
@@ -34,7 +35,7 @@ texture = ExtResource("3_k6kpi")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.7, 1)
+motion_scale = Vector2(0.7, 1.001)
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
@@ -58,13 +59,4 @@ motion_mirroring = Vector2(1152, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer5"]
 scale = Vector2(2, 2)
 texture = ExtResource("6_8xccr")
-centered = false
-
-[node name="ParallaxLayer6" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.85, 1)
-motion_mirroring = Vector2(1152, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer6"]
-scale = Vector2(2, 2)
-texture = ExtResource("7_4pqu2")
 centered = false
