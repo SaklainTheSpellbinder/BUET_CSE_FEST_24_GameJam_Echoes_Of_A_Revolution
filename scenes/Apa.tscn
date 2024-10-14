@@ -1,0 +1,80 @@
+[gd_scene load_steps=14 format=3 uid="uid://ds4r4n31yuji5"]
+
+[ext_resource type="Texture2D" uid="uid://c367dgjrfk7nt" path="res://assets/Apa/Untitled24_20241014140319.png" id="1_2jpg5"]
+[ext_resource type="Texture2D" uid="uid://d027ctk532762" path="res://assets/Apa/Untitled25_20241014140340.png" id="2_wvmdq"]
+[ext_resource type="Texture2D" uid="uid://cngq6kt8l5kns" path="res://assets/Apa/2a6d679da712da81655de9d919feacdccc5386be23ff6f811cb06c78567568e3.png" id="3_3paft"]
+[ext_resource type="Texture2D" uid="uid://pxddrmk807nx" path="res://assets/Apa/4e070ded59b5597ceb5e8daee4fc46d6536cc1d61fbab7dc5510ffb5a23da2b9.png" id="4_5csie"]
+[ext_resource type="Texture2D" uid="uid://c1rw3oya4yhxi" path="res://assets/Apa/fe91f5a974ff7d34ae078ee8b52c0392fc0e06a6d9baa8d4641c245be267d51b.png" id="5_01pgn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwu8b"]
+radius = 60.0
+height = 340.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6o04"]
+atlas = ExtResource("1_2jpg5")
+region = Rect2(0, 0, 1620, 2160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8cip"]
+atlas = ExtResource("2_wvmdq")
+region = Rect2(0, 0, 1620, 2160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcxl7"]
+atlas = ExtResource("3_3paft")
+region = Rect2(0, 0, 433, 577)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myyc3"]
+atlas = ExtResource("4_5csie")
+region = Rect2(0, 0, 506, 493)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3s5n"]
+atlas = ExtResource("5_01pgn")
+region = Rect2(0, 0, 482, 518)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fk56w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6o04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8cip")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcxl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myyc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3s5n")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uft7s"]
+radius = 64.0
+height = 344.0
+
+[node name="Apa" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_dwu8b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(11.6898, -8)
+scale = Vector2(0.546468, 0.63507)
+sprite_frames = SubResource("SpriteFrames_fk56w")
+animation = &"Run"
+frame_progress = 0.474841
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_uft7s")
