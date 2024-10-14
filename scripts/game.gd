@@ -1,50 +1,36 @@
 extends Node2D
 
-var score:int
-var speed:float
-const START_SPEED:=10.0
-const MAX_SPEED:=25.0
-var screenSize :Vector2i
-const SCORE_MODIFIER = 10
-var gameRunning:bool
-func _ready() -> void:
-	screenSize=get_window().size
-	newGame()
+
+#game variable
+const PLAYER_START_POS:=Vector2i(83,587)
+const CAM_START_POS:=Vector2i(579,332)
+
+var speed : float
+const START_SPEED:float =10.0
+const MAX_SPEED: int =25
+var screen_size : Vector2i
+
+func _ready():
+	screen_size=get_window().size
+	pass
 	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if gameRunning:
-		speed=START_SPEED
-		
-		#move icon and camera
-		$icon.position.x+=speed
-		$Camera2D.position.x+=speed
-		#updating platform
-		if $Camera2D.position.x-$Platform.position.x > screenSize.x*1.5:
-			$Platform.position.x+=screenSize.x
-		
-		#update score
-		score+=speed
-		showScore()
-	
-	else:
-		if Input.is_action_pressed("ui_accept"):
-			gameRunning=true
-			$HUD.get_node("StartLabel").hide()
-
-func newGame():
-	#resetting
-	score=0
-	$icon.position=Vector2i(0,600)
-	$icon.velocity=Vector2i(0,0)
-	$Camera2D.position=Vector2i(0,330)
+func new_game():
+	#reset the nodes
+	$player.position=PLAYER_START_POS
+	$player.velocity=Vector2i(0,0)
+	$Camera2D.position=CAM_START_POS
 	$Platform.position=Vector2i(0,0)
-	$HUD.get_node("StartLabel").show()
 
-
-func showScore():
-	$HUD.get_node("Score").text = "SCORE: " +str(score/SCORE_MODIFIER)
-
+func _process(delta):
+	speed=START_SPEED
+	if Input.is_action_pressed("ui_right"):
+		$player.position.x +=speed
+		$Camera2D.position.x +=speed
+		if $Camera2D.position.x - $Platform.position.x > screen_size.x*1.5:
+			$Platform.position.x +=screen_size.x
+	elif Input.is_action_pressed("ui_left"):
+		$player.position.x -=speed
+		$Camera2D.position.x -=speed
+		if $Platform.position.x-$Camera2D.position.x> screen_size.x*1.5:
+			$Platform.position.x -=screen_size.x
 	
