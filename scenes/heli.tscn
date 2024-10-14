@@ -75,7 +75,7 @@ height = 64.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_26xan")
 animation = &"idle"
-frame_progress = 0.39198
+frame_progress = 0.35441
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
