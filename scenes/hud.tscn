@@ -11,6 +11,7 @@ offset_bottom = 36.0
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("1_8fysf")
 theme_override_font_sizes/font_size = 36
+text = "SCORE"
 horizontal_alignment = 1
 
 [node name="StartLabel" type="Label" parent="."]
