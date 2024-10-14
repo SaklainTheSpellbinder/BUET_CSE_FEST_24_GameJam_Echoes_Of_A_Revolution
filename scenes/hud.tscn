@@ -11,22 +11,24 @@ offset_bottom = 36.0
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("1_8fysf")
 theme_override_font_sizes/font_size = 36
+text = "SCORE: "
 horizontal_alignment = 1
 
 [node name="StartLabel" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -201.5
-offset_top = -20.0
-offset_right = 201.5
-offset_bottom = 20.0
+anchors_preset = -1
+offset_left = 55.0
+offset_top = 225.0
+offset_right = 1082.0
+offset_bottom = 399.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_8fysf")
-theme_override_font_sizes/font_size = 40
-text = "Press Space to start"
+theme_override_font_sizes/font_size = 22
+text = "In the July Revolution, once students, now knights in our memories, they fought,
+ were martyred, and some were left handicapped in their battle to bring down the dictator’s rule. 
+Others carried their spirit into the fight and ultimately brought down the dictator. 
+Our game is a tribute to those heroes — they are the knight warriors of our generation.
+Let’s bring down the dictator.
+Press space to begin."
 horizontal_alignment = 1
 vertical_alignment = 1
