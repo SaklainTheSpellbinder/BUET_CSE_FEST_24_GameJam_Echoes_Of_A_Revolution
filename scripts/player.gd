@@ -9,10 +9,12 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta*1.4
-
+$NormalCol
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	elif Input.is_action_pressed("ui_down") and is_on_floor():
+		
 
 
 	move_and_slide()
