@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://dkvnjec0bnwky"]
+
+[ext_resource type="Texture2D" uid="uid://cihydt8e5v4mk" path="res://assets/helicopter (1)/helicopter.png" id="1_x4rqu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1ag6"]
+atlas = ExtResource("1_x4rqu")
+region = Rect2(0, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3badq"]
+atlas = ExtResource("1_x4rqu")
+region = Rect2(96, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq1tm"]
+atlas = ExtResource("1_x4rqu")
+region = Rect2(192, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8l7i"]
+atlas = ExtResource("1_x4rqu")
+region = Rect2(288, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pf0c"]
+atlas = ExtResource("1_x4rqu")
+region = Rect2(384, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs738"]
+atlas = ExtResource("1_x4rqu")
+region = Rect2(480, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ly76f"]
+atlas = ExtResource("1_x4rqu")
+region = Rect2(576, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khkyh"]
+atlas = ExtResource("1_x4rqu")
+region = Rect2(672, 0, 96, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_26xan"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1ag6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3badq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq1tm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8l7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pf0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs738")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ly76f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khkyh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 69.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bfl62"]
+radius = 16.0
+height = 64.0
+
+[node name="Area2D" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_26xan")
+animation = &"idle"
+frame_progress = 0.39198
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bfl62")
