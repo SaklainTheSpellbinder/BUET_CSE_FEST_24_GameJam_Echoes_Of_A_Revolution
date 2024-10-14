@@ -231,9 +231,8 @@ shape = SubResource("RectangleShape2D_ekdfr")
 position = Vector2(0, 7)
 scale = Vector2(0.859375, 0.877604)
 sprite_frames = SubResource("SpriteFrames_rhxf6")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.108875
 
 [node name="DuckCol" type="CollisionShape2D" parent="."]
 position = Vector2(3, 13)
