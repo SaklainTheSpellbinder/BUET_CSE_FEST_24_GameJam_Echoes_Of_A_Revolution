@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsils8r5881ch"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmebg"]
+bg_color = Color(0.714276, 0.565951, 0.461465, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6v3w"]
+bg_color = Color(0.400631, 0.646633, 0.686706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6prm"]
+bg_color = Color(0.748748, 0.538257, 0.530502, 1)
+
+[node name="Game_over" type="CanvasLayer"]
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -27.5
+offset_right = 125.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_nmebg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t6v3w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6prm")
+text = "RESTART"

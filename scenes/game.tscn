@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=4 uid="uid://dg8ekw1d38cg2"]
+[gd_scene load_steps=10 format=4 uid="uid://dg8ekw1d38cg2"]
 
 [ext_resource type="PackedScene" uid="uid://ckmnh0vi8mcg" path="res://scenes/background.tscn" id="1_58yqi"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_sd5ys"]
 [ext_resource type="PackedScene" uid="uid://dc00bh2f767v6" path="res://scenes/platform.tscn" id="2_oxqj0"]
-[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="3_mh0pv"]
+[ext_resource type="PackedScene" uid="uid://cpr18if4jq2na" path="res://scenes/player.tscn" id="3_mh0pv"]
 [ext_resource type="PackedScene" uid="uid://hqtmu3wcwn26" path="res://scenes/hud.tscn" id="5_7qd0s"]
-[ext_resource type="PackedScene" path="res://scenes/army.tscn" id="6_ovgjp"]
+[ext_resource type="PackedScene" uid="uid://bjm2to1gwocww" path="res://scenes/army.tscn" id="6_ovgjp"]
 [ext_resource type="PackedScene" uid="uid://dkvnjec0bnwky" path="res://scenes/heli.tscn" id="7_tqug8"]
 [ext_resource type="PackedScene" path="res://scenes/Music.tscn" id="8_uvufr"]
+[ext_resource type="PackedScene" uid="uid://dsils8r5881ch" path="res://scenes/Game_over.tscn" id="9_lplqt"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(-1, 0)
@@ -30,7 +31,10 @@ position = Vector2(579, 332)
 [node name="army" parent="." instance=ExtResource("6_ovgjp")]
 position = Vector2(596, 559)
 
-[node name="Area2D" parent="." instance=ExtResource("7_tqug8")]
+[node name="Helicopter" parent="." instance=ExtResource("7_tqug8")]
 position = Vector2(443, 437)
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("8_uvufr")]
+
+[node name="GameOver" parent="." instance=ExtResource("9_lplqt")]
+process_mode = 2

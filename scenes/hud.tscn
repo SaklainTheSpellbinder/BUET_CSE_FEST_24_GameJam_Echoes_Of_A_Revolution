@@ -31,3 +31,14 @@ Let’s bring down the dictator.
 Press space to begin."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HighScore" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -196.0
+offset_bottom = 36.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_8fysf")
+theme_override_font_sizes/font_size = 36
+text = "High Score:"
