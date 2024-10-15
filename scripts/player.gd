@@ -18,6 +18,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() :
 			velocity.y = JUMP_VELOCITY
 	
+	if get_parent().temp==1:
+		animated_sprite_2d.play("die")
 	
 	if is_on_floor():
 		if not get_parent().game_running:

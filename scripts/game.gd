@@ -24,6 +24,7 @@ var ground_height:int
 var last_obs
 var difficulty
 var high_score : int
+var temp: int=0
 
 func _ready():
 	screen_size=get_window().size
@@ -149,6 +150,7 @@ func adjust_difficulty():
 
 func game_over():
 	check_high_score()
+	temp=1
 	get_tree().paused= true
 	game_running= false
 	$GameOver.show()

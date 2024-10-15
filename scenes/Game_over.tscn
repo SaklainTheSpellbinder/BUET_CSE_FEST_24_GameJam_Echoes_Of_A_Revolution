@@ -33,9 +33,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_t6v3w")
 theme_override_styles/normal = SubResource("StyleBoxFlat_o6prm")
 text = "RESTART"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Button"]
-stream = ExtResource("2_ukomv")
-
 [node name="Label" type="Label" parent="."]
 offset_left = 141.0
 offset_top = 387.0
@@ -48,3 +45,9 @@ Heroes never die
  Those we love never truly leave us. There are things that death cannot touch
  The dictator will be defeated"
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(451, 296.5)
+stream = ExtResource("2_ukomv")
+volume_db = 24.0
+autoplay = true
