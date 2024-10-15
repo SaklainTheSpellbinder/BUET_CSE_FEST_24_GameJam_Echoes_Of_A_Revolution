@@ -4,7 +4,6 @@ extends CharacterBody2D
 const SPEED = 50.0
 const JUMP_VELOCITY = -700.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-var main_scene=get_parent()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -30,9 +29,9 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_pressed("ui_down") :
 				$NormalCol.disabled=true
 				animated_sprite_2d.play("duck")
-			#elif main_scene.score>40000:
-				#if direction==0:
-					#animated_sprite_2d.play("idle")
+			elif get_parent().score>40000:
+				if direction==0:
+					animated_sprite_2d.play("idle")
 			else:
 				animated_sprite_2d.animation="run"
 	else:
