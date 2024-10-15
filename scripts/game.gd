@@ -61,13 +61,21 @@ func _process(delta):
 		#generate obstacles
 		generate_obs()
 		show_score()
-		if Input.is_action_pressed("ui_right"):
+		if score>40000 :
+			if Input.is_action_pressed("ui_right"):
+				$player.position.x +=speed
+				$Camera2D.position.x +=speed
+				score+=speed
+				if $Camera2D.position.x - $Platform.position.x > screen_size.x*1.5:
+					$Platform.position.x +=screen_size.x
+		else:
 			$player.position.x +=speed
 			$Camera2D.position.x +=speed
 			score+=speed
 			if $Camera2D.position.x - $Platform.position.x > screen_size.x*1.5:
 				$Platform.position.x +=screen_size.x
-				
+					
+					
 		#remove off-screen helicopters
 		for  obs in obstacles:
 			if obs.position.x < ($Camera2D.position.x - screen_size.x):

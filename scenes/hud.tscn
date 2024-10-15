@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://hqtmu3wcwn26"]
+[gd_scene load_steps=3 format=3 uid="uid://hqtmu3wcwn26"]
 
 [ext_resource type="FontFile" uid="uid://dbu8i7djx7nga" path="res://assets/fonts/Minecraft.ttf" id="1_8fysf"]
+[ext_resource type="FontFile" uid="uid://d2vhuy8csfwxf" path="res://assets/fonts/HARRYP.TTF" id="2_ly6hm"]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -16,15 +17,14 @@ text = "SCORE: "
 horizontal_alignment = 1
 
 [node name="StartLabel" type="Label" parent="."]
-offset_left = 55.0
-offset_top = 225.0
-offset_right = 1082.0
-offset_bottom = 399.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_8fysf")
-theme_override_font_sizes/font_size = 22
+offset_left = -3.0
+offset_top = 258.0
+offset_right = 1150.0
+offset_bottom = 545.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ly6hm")
+theme_override_font_sizes/font_size = 42
 text = "In the July Revolution, once students, now knights in our memories, they fought,
  were martyred, and some were left handicapped in their battle to bring down the dictator’s rule. 
 Others carried their spirit into the fight and ultimately brought down the dictator. 

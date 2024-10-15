@@ -4,7 +4,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ungdp"]
 radius = 32.0
-height = 128.0
+height = 116.0
 
 [node name="army" type="Area2D"]
 
@@ -14,5 +14,5 @@ texture = ExtResource("1_veyqk")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 0)
+position = Vector2(9, 0)
 shape = SubResource("CapsuleShape2D_ungdp")
