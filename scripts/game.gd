@@ -94,6 +94,7 @@ func _process(delta):
 		if Input.is_action_just_pressed("ui_accept"):
 			game_running=true
 			$HUD.get_node("StartLabel").hide()
+			
 	
 func show_score():
 	$HUD.get_node("Score").text="SCORE:"+str(score/SCORE_MODIFIER)
