@@ -71,8 +71,8 @@ shape = SubResource("CapsuleShape2D_dwu8b")
 position = Vector2(11.6898, -8)
 scale = Vector2(0.546468, 0.63507)
 sprite_frames = SubResource("SpriteFrames_fk56w")
-animation = &"Apa_idle"
-frame_progress = 0.719257
+animation = &"Apa_run"
+frame_progress = 0.0608346
 
 [node name="Area2D" type="Area2D" parent="."]
 
