@@ -5,7 +5,7 @@ var heli_scene = preload("res://scenes/heli.tscn")
 var army_scene = preload("res://scenes/army.tscn")
 var obstacle_type := [army_scene]
 var obstacles:Array
-var heli_heights :=[200,390]
+var heli_heights :=[200,480]
 
 #game variable
 const PLAYER_START_POS:=Vector2i(83,587)
@@ -114,6 +114,7 @@ func generate_obs():
 				var obs_x : int =screen_size.x + score + 100
 				var obs_y : int =heli_heights[randi() % heli_heights.size()]
 				add_obs(obs, obs_x, obs_y)
+			
 			
 				
 func add_obs(obs,x,y):

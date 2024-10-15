@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cwje4faey2yhr" path="res://assets/Warrior_Red.png" id="2_k86hk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ekdfr"]
-size = Vector2(68, 72)
+size = Vector2(79, 113)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_77dqp"]
 atlas = ExtResource("2_at388")
@@ -217,24 +217,23 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c0t4s"]
-size = Vector2(46, 46)
+size = Vector2(68, 83)
 
 [node name="player" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_hq0wn")
 
 [node name="NormalCol" type="CollisionShape2D" parent="."]
-position = Vector2(4, 2)
+position = Vector2(0.5, -18.5)
 shape = SubResource("RectangleShape2D_ekdfr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 7)
-scale = Vector2(0.859375, 0.877604)
+position = Vector2(5.00001, -11)
+scale = Vector2(1.3776, 1.40683)
 sprite_frames = SubResource("SpriteFrames_rhxf6")
-animation = &"idle"
+animation = &"duck"
 autoplay = "idle"
-frame_progress = 0.645172
 
 [node name="DuckCol" type="CollisionShape2D" parent="."]
-position = Vector2(3, 13)
+position = Vector2(2, -5.5)
 shape = SubResource("RectangleShape2D_c0t4s")
