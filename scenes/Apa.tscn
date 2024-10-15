@@ -1,14 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://bqvt0lne4yoxm"]
 
 [ext_resource type="Texture2D" uid="uid://cpt5n8ev8e6rn" path="res://assets/New And Improved Apa/Apa_idle_1.png" id="1_87wbg"]
+[ext_resource type="Script" path="res://scripts/apa.gd" id="1_u8get"]
 [ext_resource type="Texture2D" uid="uid://cw4whe1c27e6e" path="res://assets/New And Improved Apa/Apa_idle_2.png" id="2_ep3o2"]
 [ext_resource type="Texture2D" uid="uid://h5u2n0g7d8wi" path="res://assets/New And Improved Apa/Apa_run_1.png" id="3_usjay"]
 [ext_resource type="Texture2D" uid="uid://jntgv25l1nus" path="res://assets/New And Improved Apa/Apa_run_2.png" id="4_6hr88"]
 [ext_resource type="Texture2D" uid="uid://ojjtfn1te5jt" path="res://assets/New And Improved Apa/Apa_run_3.png" id="5_5t2as"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwu8b"]
-radius = 60.0
-height = 340.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fd55m"]
 atlas = ExtResource("1_87wbg")
@@ -58,23 +55,20 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uft7s"]
-radius = 64.0
-height = 344.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwu8b"]
+radius = 36.0
+height = 130.0
 
-[node name="Apa" type="CharacterBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_dwu8b")
+[node name="Apa" type="Area2D"]
+script = ExtResource("1_u8get")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(11.6898, -8)
-scale = Vector2(0.546468, 0.63507)
+position = Vector2(-1, -2.00001)
+scale = Vector2(0.207414, 0.234157)
 sprite_frames = SubResource("SpriteFrames_fk56w")
 animation = &"Apa_run"
-frame_progress = 0.0608346
+frame_progress = 0.687806
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CapsuleShape2D_uft7s")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 4)
+shape = SubResource("CapsuleShape2D_dwu8b")

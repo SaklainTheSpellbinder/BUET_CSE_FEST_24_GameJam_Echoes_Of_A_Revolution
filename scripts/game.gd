@@ -3,6 +3,7 @@ extends Node2D
 #preload obstacles
 var heli_scene = preload("res://scenes/heli.tscn")
 var army_scene = preload("res://scenes/army.tscn")
+var apa_scene = preload("res://scenes/Apa.tscn")
 var obstacle_type := [army_scene]
 var obstacles:Array
 var heli_heights :=[200,480]
@@ -63,7 +64,7 @@ func _process(delta):
 		#generate obstacles
 		generate_obs()
 		show_score()
-		if score>40000 :
+		if score>60000 :
 			if Input.is_action_pressed("ui_right"):
 				$player.position.x +=speed
 				$Camera2D.position.x +=speed
@@ -141,6 +142,7 @@ func remove_obs(obs):
 func hit_obs(body):
 	if body.name == "player" :
 		print("Collision")
+		#if not Input.is_action_pressed("kill"):
 		game_over()
 	
 	

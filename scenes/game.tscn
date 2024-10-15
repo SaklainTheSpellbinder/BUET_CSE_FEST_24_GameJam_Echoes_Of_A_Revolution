@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dg8ekw1d38cg2"]
+[gd_scene load_steps=11 format=4 uid="uid://dg8ekw1d38cg2"]
 
 [ext_resource type="PackedScene" uid="uid://ckmnh0vi8mcg" path="res://scenes/background.tscn" id="1_58yqi"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_sd5ys"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dkvnjec0bnwky" path="res://scenes/heli.tscn" id="7_tqug8"]
 [ext_resource type="PackedScene" uid="uid://dkps7yosuthdp" path="res://scenes/Music.tscn" id="8_uvufr"]
 [ext_resource type="PackedScene" uid="uid://dsils8r5881ch" path="res://scenes/Game_over.tscn" id="9_lplqt"]
+[ext_resource type="PackedScene" uid="uid://bqvt0lne4yoxm" path="res://scenes/Apa.tscn" id="10_3wckw"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(-1, 0)
@@ -38,3 +39,6 @@ position = Vector2(360, 942)
 
 [node name="GameOver" parent="." instance=ExtResource("9_lplqt")]
 process_mode = 2
+
+[node name="Apa" parent="." instance=ExtResource("10_3wckw")]
+position = Vector2(793, 959)
