@@ -17,6 +17,7 @@ text = "SCORE: "
 horizontal_alignment = 1
 
 [node name="StartLabel" type="Label" parent="."]
+show_behind_parent = true
 offset_left = -3.0
 offset_top = 258.0
 offset_right = 1150.0

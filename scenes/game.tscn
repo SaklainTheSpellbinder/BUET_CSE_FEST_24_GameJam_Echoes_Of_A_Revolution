@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://hqtmu3wcwn26" path="res://scenes/hud.tscn" id="5_7qd0s"]
 [ext_resource type="PackedScene" uid="uid://bjm2to1gwocww" path="res://scenes/army.tscn" id="6_ovgjp"]
 [ext_resource type="PackedScene" uid="uid://dkvnjec0bnwky" path="res://scenes/heli.tscn" id="7_tqug8"]
-[ext_resource type="PackedScene" uid="uid://byreumux7oogm" path="res://scenes/Music.tscn" id="8_uvufr"]
+[ext_resource type="PackedScene" uid="uid://dkps7yosuthdp" path="res://scenes/Music.tscn" id="8_uvufr"]
 [ext_resource type="PackedScene" uid="uid://dsils8r5881ch" path="res://scenes/Game_over.tscn" id="9_lplqt"]
 
 [node name="Game" type="Node2D"]
