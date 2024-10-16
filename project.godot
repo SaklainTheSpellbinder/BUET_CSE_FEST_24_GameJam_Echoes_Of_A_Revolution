@@ -13,7 +13,9 @@ config_version=5
 config/name="Noobies GamJam Coolest Team"
 run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.168627, 0.254902, 0.207843, 1)
+boot_splash/image="res://assets/Logo.png"
+config/icon="res://assets/Logo.png"
 
 [autoload]
 
