@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciqaq8qbap3d8"]
+
+[ext_resource type="FontFile" uid="uid://d2vhuy8csfwxf" path="res://assets/fonts/HARRYP.TTF" id="1_0hbi2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmvia"]
+bg_color = Color(0.714276, 0.565951, 0.461465, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67tx0"]
+bg_color = Color(0.400631, 0.646633, 0.686706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvo62"]
+bg_color = Color(0.748748, 0.538257, 0.530502, 1)
+
+[node name="GameWin" type="CanvasLayer"]
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -27.5
+offset_right = 125.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_0hbi2")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/hover = SubResource("StyleBoxFlat_lmvia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_67tx0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tvo62")
+text = "New Game"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 141.0
+offset_top = 387.0
+offset_right = 1003.0
+offset_bottom = 510.0
+theme_override_fonts/font = ExtResource("1_0hbi2")
+theme_override_font_sizes/font_size = 45
+text = "We did it! 
+The dictator has been defeated!"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

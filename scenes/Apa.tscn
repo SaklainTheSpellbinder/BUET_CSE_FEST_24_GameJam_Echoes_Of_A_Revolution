@@ -81,15 +81,19 @@ radius = 36.0
 height = 130.0
 
 [node name="Apa" type="Area2D"]
+z_index = 1
 script = ExtResource("1_u8get")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
 position = Vector2(-1.95256, -4.77715)
 scale = Vector2(0.203014, 0.224531)
 sprite_frames = SubResource("SpriteFrames_fk56w")
-animation = &"Run"
-frame_progress = 0.929678
+animation = &"Attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -1)
 shape = SubResource("CapsuleShape2D_dwu8b")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
