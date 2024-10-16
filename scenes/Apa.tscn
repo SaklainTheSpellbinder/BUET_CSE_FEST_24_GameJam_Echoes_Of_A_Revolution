@@ -1,11 +1,21 @@
-[gd_scene load_steps=14 format=3 uid="uid://bqvt0lne4yoxm"]
+[gd_scene load_steps=18 format=3 uid="uid://bqvt0lne4yoxm"]
 
 [ext_resource type="Texture2D" uid="uid://cpt5n8ev8e6rn" path="res://assets/New And Improved Apa/Apa_idle_1.png" id="1_87wbg"]
 [ext_resource type="Script" path="res://scripts/apa.gd" id="1_u8get"]
+[ext_resource type="Texture2D" uid="uid://c04iybu10ckvw" path="res://assets/New And Improved Apa/Apa_attack_1.png" id="2_cp8jn"]
 [ext_resource type="Texture2D" uid="uid://cw4whe1c27e6e" path="res://assets/New And Improved Apa/Apa_idle_2.png" id="2_ep3o2"]
+[ext_resource type="Texture2D" uid="uid://5jr4c25c0p3f" path="res://assets/New And Improved Apa/Apa_attack_2.png" id="3_h7eu0"]
 [ext_resource type="Texture2D" uid="uid://h5u2n0g7d8wi" path="res://assets/New And Improved Apa/Apa_run_1.png" id="3_usjay"]
 [ext_resource type="Texture2D" uid="uid://jntgv25l1nus" path="res://assets/New And Improved Apa/Apa_run_2.png" id="4_6hr88"]
 [ext_resource type="Texture2D" uid="uid://ojjtfn1te5jt" path="res://assets/New And Improved Apa/Apa_run_3.png" id="5_5t2as"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yhcy"]
+atlas = ExtResource("2_cp8jn")
+region = Rect2(0, 0, 433, 577)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0epd"]
+atlas = ExtResource("3_h7eu0")
+region = Rect2(0, 0, 433, 577)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fd55m"]
 atlas = ExtResource("1_87wbg")
@@ -31,13 +41,24 @@ region = Rect2(0, 0, 433, 577)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_6yhcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0epd")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_fd55m")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ee7qd")
 }],
 "loop": true,
-"name": &"Apa_idle",
+"name": &"Idle",
 "speed": 3.0
 }, {
 "frames": [{
@@ -51,7 +72,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_3nkwq")
 }],
 "loop": true,
-"name": &"Apa_run",
+"name": &"Run",
 "speed": 6.0
 }]
 
@@ -66,8 +87,8 @@ script = ExtResource("1_u8get")
 position = Vector2(-1, -2.00001)
 scale = Vector2(0.207414, 0.234157)
 sprite_frames = SubResource("SpriteFrames_fk56w")
-animation = &"Apa_run"
-frame_progress = 0.687806
+animation = &"Attack"
+frame_progress = 0.298358
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 4)
