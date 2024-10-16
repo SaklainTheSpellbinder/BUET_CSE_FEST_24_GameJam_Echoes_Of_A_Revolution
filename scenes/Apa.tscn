@@ -84,12 +84,12 @@ height = 130.0
 script = ExtResource("1_u8get")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -2.00001)
-scale = Vector2(0.207414, 0.234157)
+position = Vector2(-1.95256, -4.77715)
+scale = Vector2(0.203014, 0.224531)
 sprite_frames = SubResource("SpriteFrames_fk56w")
-animation = &"Attack"
-frame_progress = 0.298358
+animation = &"Run"
+frame_progress = 0.929678
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 4)
+position = Vector2(-2, -1)
 shape = SubResource("CapsuleShape2D_dwu8b")

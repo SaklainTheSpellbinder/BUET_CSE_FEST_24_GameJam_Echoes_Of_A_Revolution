@@ -41,4 +41,4 @@ position = Vector2(360, 942)
 process_mode = 2
 
 [node name="Apa" parent="." instance=ExtResource("10_3wckw")]
-position = Vector2(793, 959)
+position = Vector2(1106, 932)

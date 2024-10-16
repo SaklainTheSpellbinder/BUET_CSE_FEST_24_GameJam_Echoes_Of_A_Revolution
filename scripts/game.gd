@@ -7,6 +7,8 @@ var apa_scene = preload("res://scenes/Apa.tscn")
 var obstacle_type := [army_scene]
 var obstacles:Array
 var heli_heights :=[200,480]
+var apa_spawned = false
+var apa_score_threshold = 6000
 
 #game variable
 const PLAYER_START_POS:=Vector2i(83,587)
@@ -64,7 +66,7 @@ func _process(delta):
 		#generate obstacles
 		generate_obs()
 		show_score()
-		if score>60000 :
+		if score>6000 :
 			if Input.is_action_pressed("ui_right"):
 				$player.position.x +=speed
 				$Camera2D.position.x +=speed
@@ -78,7 +80,8 @@ func _process(delta):
 			if $Camera2D.position.x - $Platform.position.x > screen_size.x*1.5:
 				$Platform.position.x +=screen_size.x
 					
-					
+		if score >= apa_score_threshold and not apa_spawned:
+			spawn_apa()
 		#remove off-screen helicopters
 		for  obs in obstacles:
 			if obs.position.x < ($Camera2D.position.x - screen_size.x):
@@ -151,6 +154,12 @@ func adjust_difficulty():
 	if difficulty > MAX_DIFFICULTY:
 		difficulty=MAX_DIFFICULTY
 
+func spawn_apa():
+	apa_spawned = true 
+	# Instance the villain scene
+	var apa = apa_scene.instantiate()
+	apa.position = Vector2(1000,587)
+	add_child(apa)
 
 func game_over():
 	check_high_score()
