@@ -158,7 +158,7 @@ func spawn_apa():
 	apa_spawned = true 
 	# Instance the villain scene
 	var apa = apa_scene.instantiate()
-	apa.position = Vector2(1000,587)
+	apa.position = Vector2(7500,580)
 	add_child(apa)
 
 func game_over():
