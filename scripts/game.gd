@@ -163,7 +163,7 @@ func add_obs(obs,x,y):
 func remove_obs(obs):
 	obs.queue_free()
 	obstacles.erase(obs)
-	
+	 
 func hit_obs(body):
 	if body.name == "player" :
 		print("Collision")
