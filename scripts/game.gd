@@ -8,8 +8,9 @@ var obstacle_type := [army_scene]
 var obstacles:Array
 var heli_heights :=[200,480]
 var apa_spawned = false
-var apa_score_threshold = 6000
+var apa_score_threshold = 40000
 var apa_instance: Area2D = null  # Store reference to the Apa instance
+var next_apa_spawn_score = apa_score_threshold  # Next score threshold for spawning Apa
 
 #game variable
 const PLAYER_START_POS:=Vector2i(83,587)
@@ -45,7 +46,8 @@ func new_game():
 	get_tree().paused = false
 	difficulty = 0
 	apa_spawned = false  # Reset apa_spawned to false here
-
+	next_apa_spawn_score = apa_score_threshold  # Reset the next score for Apa
+	
 	# Reset player variables for a new game
 	$player.can_use_kill = true  # Allow the player to use "kill" again
 	$player.kill_cooldown_score = 0  # Reset the cooldown score
@@ -80,21 +82,21 @@ func _process(delta):
 		#generate obstacles
 		generate_obs()
 		show_score()
-		if score>6000 :
-			if Input.is_action_pressed("ui_right"):
-				$player.position.x +=speed
-				$Camera2D.position.x +=speed
-				score+=speed
-				if $Camera2D.position.x - $Platform.position.x > screen_size.x*1.5:
-					$Platform.position.x +=screen_size.x
-		else:
-			$player.position.x +=speed
-			$Camera2D.position.x +=speed
-			score+=speed
-			if $Camera2D.position.x - $Platform.position.x > screen_size.x*1.5:
-				$Platform.position.x +=screen_size.x
+		#if score>6000 :
+			#if Input.is_action_pressed("ui_right"):
+				#$player.position.x +=speed
+				#$Camera2D.position.x +=speed
+				#score+=speed
+				#if $Camera2D.position.x - $Platform.position.x > screen_size.x*1.5:
+					#$Platform.position.x +=screen_size.x
+		#else:
+		$player.position.x +=speed
+		$Camera2D.position.x +=speed
+		score+=speed
+		if $Camera2D.position.x - $Platform.position.x > screen_size.x*1.5:
+			$Platform.position.x +=screen_size.x
 					
-		if score >= apa_score_threshold and not apa_spawned:
+		if score >= next_apa_spawn_score and not apa_spawned:
 			spawn_apa()
 		#remove off-screen helicopters
 		for  obs in obstacles:
@@ -102,7 +104,7 @@ func _process(delta):
 				remove_obs(obs)
 		
 		# Check if the Apa is off-screen and remove it
-		if apa_spawned and apa_instance and apa_instance.position.x < -100:
+		if apa_spawned and apa_instance and apa_instance.position.x < ($Camera2D.position.x - screen_size.x):
 			apa_instance.queue_free()
 			apa_instance = null  # Clear the reference to Apa
 			apa_spawned = false  # Reset spawn status
@@ -176,12 +178,14 @@ func adjust_difficulty():
 		difficulty=MAX_DIFFICULTY
 
 func spawn_apa():
-	if not apa_spawned:  # Spawn only if Apa hasn't been spawned yet
-		apa_spawned = true
-		apa_instance = apa_scene.instantiate()  # Create an instance of Apa
-		apa_instance.position = Vector2(7500, 570)  # Set the initial position
-		apa_instance.body_entered.connect(hit_obs)  # Connect signals for collision detection
-		add_child(apa_instance)  # Add the instance to the scene tree
+	 # Spawn only if Apa hasn't been spawned yet
+	apa_spawned = true
+	next_apa_spawn_score += 2000
+	apa_instance = apa_scene.instantiate()  # Create an instance of Apa
+	var apax=$player.position.x+1500
+	apa_instance.position = Vector2(apax, 570)  # Set the initial position
+	apa_instance.body_entered.connect(hit_obs)  # Connect signals for collision detection
+	add_child(apa_instance)  # Add the instance to the scene tree
 
 func game_over():
 	check_high_score()

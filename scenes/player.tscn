@@ -1,12 +1,29 @@
-[gd_scene load_steps=33 format=3 uid="uid://cpr18if4jq2na"]
+[gd_scene load_steps=38 format=3 uid="uid://cpr18if4jq2na"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_hq0wn"]
 [ext_resource type="Texture2D" uid="uid://dpd3cug733g5j" path="res://assets/Pawn_Red.png" id="2_1rkrn"]
+[ext_resource type="Texture2D" uid="uid://c41ligcn2rkff" path="res://assets/Archer_Red.png" id="2_6mh46"]
 [ext_resource type="Texture2D" uid="uid://bn74ukca4b1il" path="res://assets/Dead.png" id="2_at388"]
 [ext_resource type="Texture2D" uid="uid://cwje4faey2yhr" path="res://assets/Warrior_Red.png" id="2_k86hk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ekdfr"]
 size = Vector2(79, 113)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3auo"]
+atlas = ExtResource("2_6mh46")
+region = Rect2(384, 1152, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rfum"]
+atlas = ExtResource("2_6mh46")
+region = Rect2(576, 1152, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owphg"]
+atlas = ExtResource("2_6mh46")
+region = Rect2(768, 1152, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1i7m"]
+atlas = ExtResource("2_6mh46")
+region = Rect2(960, 1152, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_77dqp"]
 atlas = ExtResource("2_at388")
@@ -110,6 +127,23 @@ region = Rect2(960, 192, 192, 192)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rhxf6"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3auo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rfum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owphg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1i7m")
+}],
+"loop": true,
+"name": &"archer",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_77dqp")
@@ -231,8 +265,9 @@ shape = SubResource("RectangleShape2D_ekdfr")
 position = Vector2(5.00001, -11)
 scale = Vector2(1.3776, 1.40683)
 sprite_frames = SubResource("SpriteFrames_rhxf6")
-animation = &"die"
+animation = &"archer"
 autoplay = "idle"
+frame_progress = 0.491311
 
 [node name="DuckCol" type="CollisionShape2D" parent="."]
 position = Vector2(2, -5.5)

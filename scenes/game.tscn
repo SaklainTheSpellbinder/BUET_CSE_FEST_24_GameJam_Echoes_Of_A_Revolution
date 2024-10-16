@@ -37,6 +37,7 @@ position = Vector2(558, 956)
 position = Vector2(360, 942)
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("8_uvufr")]
+parameters/looping = true
 
 [node name="GameOver" parent="." instance=ExtResource("9_lplqt")]
 process_mode = 2
@@ -45,3 +46,4 @@ process_mode = 2
 position = Vector2(1106, 932)
 
 [node name="GameWin" parent="." instance=ExtResource("11_8s4i5")]
+process_mode = 2

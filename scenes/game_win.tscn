@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ciqaq8qbap3d8"]
+[gd_scene load_steps=6 format=3 uid="uid://ciqaq8qbap3d8"]
 
 [ext_resource type="FontFile" uid="uid://d2vhuy8csfwxf" path="res://assets/fonts/HARRYP.TTF" id="1_0hbi2"]
+[ext_resource type="AudioStream" uid="uid://bfs60cb5iei3r" path="res://assets/1016.MP3" id="2_fllfb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmvia"]
 bg_color = Color(0.714276, 0.565951, 0.461465, 1)
@@ -43,4 +44,7 @@ text = "We did it!
 The dictator has been defeated!"
 horizontal_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_fllfb")
+autoplay = true
+parameters/looping = true

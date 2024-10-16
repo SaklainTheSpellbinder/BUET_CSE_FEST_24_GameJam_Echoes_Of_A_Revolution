@@ -1,6 +1,7 @@
 extends Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: Node2D = get_parent().get_node("player")  
+@onready var animated_sprite_2d_2: AnimatedSprite2D = $AnimatedSprite2D2
 
 var speed = 200
 var animation_state = "Run"  # Default animation when villain spawns
@@ -10,7 +11,9 @@ func _ready():
 	
 	# Start playing the default animation when the villain is spawned
 	animated_sprite_2d.flip_h= true
+	animated_sprite_2d_2.flip_h=true
 	animated_sprite_2d.play("Run")
+	animated_sprite_2d_2.play("Run")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,7 +30,7 @@ func _process(delta):
 
 	# Update animation based on current state (for example, you might switch to attack or idle)
 	# Check distance between villain and player
-	var distance_to_player = position.distance_to(player.position)
+	var distance_to_player = animated_sprite_2d.global_position.distance_to(player.position)
 
 	# If the distance is less than or equal to 200, switch to Attack animation
 	if distance_to_player <= 200:
@@ -36,9 +39,10 @@ func _process(delta):
 	else:
 		change_animation("Run")
 	
-	if Input.is_action_pressed("kill") and distance_to_player <= 90 :
+	if Input.is_action_pressed("Archer") and distance_to_player <= 180 :
 		get_parent().apa_spawned=false
-		queue_free()
+		get_parent().apa_instance.queue_free()
+		get_parent().apa_instance = null
 		get_parent().game_win()
 
 # Function to change the animation

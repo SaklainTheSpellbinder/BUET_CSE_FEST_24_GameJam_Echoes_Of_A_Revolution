@@ -36,15 +36,19 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_pressed("ui_down") :
 				$NormalCol.disabled=true
 				animated_sprite_2d.play("duck")
-			elif get_parent().score>6000:
-				if direction==0:
-					animated_sprite_2d.play("idle")
-				else:
-					animated_sprite_2d.animation="run"
+			#elif get_parent().score>6000:
+				#if direction==0:
+					#animated_sprite_2d.play("idle")
+				#else:
+					#animated_sprite_2d.animation="run"
 			else:
 				animated_sprite_2d.animation="run"
 	else:
-		animated_sprite_2d.play("jump")		
+		if Input.is_action_pressed("Archer"):
+			animated_sprite_2d.play("archer")
+		else:
+			animated_sprite_2d.play("jump")		
+		
 		
 	#directionFlip
 	if direction==1:

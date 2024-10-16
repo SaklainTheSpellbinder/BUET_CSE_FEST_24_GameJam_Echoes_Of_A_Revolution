@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bqvt0lne4yoxm"]
+[gd_scene load_steps=18 format=3 uid="uid://bqvt0lne4yoxm"]
 
 [ext_resource type="Texture2D" uid="uid://cpt5n8ev8e6rn" path="res://assets/New And Improved Apa/Apa_idle_1.png" id="1_87wbg"]
 [ext_resource type="Script" path="res://scripts/apa.gd" id="1_u8get"]
@@ -8,12 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://h5u2n0g7d8wi" path="res://assets/New And Improved Apa/Apa_run_1.png" id="3_usjay"]
 [ext_resource type="Texture2D" uid="uid://jntgv25l1nus" path="res://assets/New And Improved Apa/Apa_run_2.png" id="4_6hr88"]
 [ext_resource type="Texture2D" uid="uid://ojjtfn1te5jt" path="res://assets/New And Improved Apa/Apa_run_3.png" id="5_5t2as"]
-[ext_resource type="Texture2D" uid="uid://cd7skbtrvq0xu" path="res://assets/ARMY SOLDIER sprites (1)/Run0000.png" id="9_kt7d5"]
-[ext_resource type="Texture2D" uid="uid://bjjjncj12ym5d" path="res://assets/ARMY SOLDIER sprites (1)/Run0001.png" id="10_d2brb"]
-[ext_resource type="Texture2D" uid="uid://maje28gna14b" path="res://assets/ARMY SOLDIER sprites (1)/Run0002.png" id="11_ek1r6"]
-[ext_resource type="Texture2D" uid="uid://bohtocadefo2q" path="res://assets/ARMY SOLDIER sprites (1)/Run0003.png" id="12_a6xvp"]
-[ext_resource type="Texture2D" uid="uid://c6s6k5h8guon1" path="res://assets/ARMY SOLDIER sprites (1)/Run0004.png" id="13_4kua8"]
-[ext_resource type="Texture2D" uid="uid://cjro7njkxfyg6" path="res://assets/ARMY SOLDIER sprites (1)/Run0005.png" id="14_w83hw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6yhcy"]
 atlas = ExtResource("2_cp8jn")
@@ -86,36 +80,6 @@ animations = [{
 radius = 36.0
 height = 130.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_wwaqt"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_kt7d5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_d2brb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_ek1r6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_a6xvp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_4kua8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_w83hw")
-}],
-"loop": true,
-"name": &"Run",
-"speed": 10.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8gwyv"]
-radius = 30.0
-height = 120.0
-
 [node name="Apa" type="Area2D"]
 z_index = 1
 script = ExtResource("1_u8get")
@@ -133,11 +97,3 @@ position = Vector2(-2, -1)
 shape = SubResource("CapsuleShape2D_dwu8b")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(-89, 1.25)
-scale = Vector2(0.4, 0.498)
-sprite_frames = SubResource("SpriteFrames_wwaqt")
-animation = &"Run"
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-92, 6)
-shape = SubResource("CapsuleShape2D_8gwyv")
