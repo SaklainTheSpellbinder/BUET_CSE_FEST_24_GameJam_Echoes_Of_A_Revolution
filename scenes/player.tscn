@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cpr18if4jq2na"]
+[gd_scene load_steps=44 format=3 uid="uid://cpr18if4jq2na"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_hq0wn"]
 [ext_resource type="Texture2D" uid="uid://dpd3cug733g5j" path="res://assets/Pawn_Red.png" id="2_1rkrn"]
@@ -40,6 +40,30 @@ region = Rect2(256, 128, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ctqy5"]
 atlas = ExtResource("2_1rkrn")
 region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5t4w3"]
+atlas = ExtResource("2_1rkrn")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3hfv"]
+atlas = ExtResource("2_1rkrn")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07vpi"]
+atlas = ExtResource("2_1rkrn")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x13fq"]
+atlas = ExtResource("2_1rkrn")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kja8k"]
+atlas = ExtResource("2_1rkrn")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cyf6"]
+atlas = ExtResource("2_1rkrn")
+region = Rect2(960, 192, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_63ihv"]
 atlas = ExtResource("2_k86hk")
@@ -161,10 +185,28 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ctqy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5t4w3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3hfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07vpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x13fq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kja8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cyf6")
 }],
 "loop": true,
 "name": &"duck",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -265,9 +307,8 @@ shape = SubResource("RectangleShape2D_ekdfr")
 position = Vector2(5.00001, -11)
 scale = Vector2(1.3776, 1.40683)
 sprite_frames = SubResource("SpriteFrames_rhxf6")
-animation = &"archer"
+animation = &"duck"
 autoplay = "idle"
-frame_progress = 0.491311
 
 [node name="DuckCol" type="CollisionShape2D" parent="."]
 position = Vector2(2, -5.5)
