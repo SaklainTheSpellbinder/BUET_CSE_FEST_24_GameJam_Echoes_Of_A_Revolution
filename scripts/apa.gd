@@ -4,7 +4,7 @@ extends Area2D
 @onready var animated_sprite_2d_2: AnimatedSprite2D = $AnimatedSprite2D2
 @onready var animated_sprite_2d_3: AnimatedSprite2D = $AnimatedSprite2D3
 
-var speed = 200
+var speed = 100
 var animation_state = "Run"  # Default animation when villain spawns
 
 # Called when the node enters the scene tree for the first time.
