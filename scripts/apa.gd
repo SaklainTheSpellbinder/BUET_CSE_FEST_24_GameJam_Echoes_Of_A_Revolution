@@ -2,6 +2,7 @@ extends Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: Node2D = get_parent().get_node("player")  
 @onready var animated_sprite_2d_2: AnimatedSprite2D = $AnimatedSprite2D2
+@onready var animated_sprite_2d_3: AnimatedSprite2D = $AnimatedSprite2D3
 
 var speed = 200
 var animation_state = "Run"  # Default animation when villain spawns
@@ -12,9 +13,10 @@ func _ready():
 	# Start playing the default animation when the villain is spawned
 	animated_sprite_2d.flip_h= true
 	animated_sprite_2d_2.flip_h=true
+	animated_sprite_2d_3.flip_h=true
 	animated_sprite_2d.play("Run")
 	animated_sprite_2d_2.play("Run")
-
+	animated_sprite_2d_3.play("Run")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
