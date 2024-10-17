@@ -20,4 +20,5 @@ Start: When you first open this application, you'll see a message commemorating 
 Jump: When a corrupt soldier appears, our hero leaps to dodge. Press the ‘space bar’, ‘W’, or ‘up arrow’ keys to jump.
 Duck: You'll also see helicopters raining bullets on our students. To dodge these, press ‘S’ or ‘down arrow’.
 Win: At 4,000 points, the ultimate villain (hint: Apa ;) ) appears, and time slows. Jump and press ‘A’ to defeat her.
+
 Let the revolution echo through you.
