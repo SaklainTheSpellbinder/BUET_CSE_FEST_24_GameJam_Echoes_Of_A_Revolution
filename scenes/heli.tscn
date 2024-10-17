@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dkvnjec0bnwky"]
 
-[ext_resource type="Script" path="res://scenes/heli.gd" id="1_86dlv"]
+[ext_resource type="Script" path="res://scripts/heli.gd" id="1_86dlv"]
 [ext_resource type="Texture2D" uid="uid://cihydt8e5v4mk" path="res://assets/helicopter (1)/helicopter.png" id="1_x4rqu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a1ag6"]
