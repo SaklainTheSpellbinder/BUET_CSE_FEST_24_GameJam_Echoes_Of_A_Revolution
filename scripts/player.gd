@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 			#kill_cooldown_score = get_parent().score + 1000  # Set the score threshold for cooldown
 		else:
 			$NormalCol.disabled=false
-			if Input.is_action_pressed("ui_down") :
+			if Input.is_action_pressed("duck") :
 				$NormalCol.disabled=true
 				animated_sprite_2d.play("duck")
 			#elif get_parent().score>6000:
