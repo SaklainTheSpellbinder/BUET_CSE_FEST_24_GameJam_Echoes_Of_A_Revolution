@@ -24,11 +24,6 @@ Let the revolution echo through you.
 - [Arana](https://github.com/Ramisaraidah)
 - [Mufeed](https://github.com/paajnW)
 
-## Team Members
-
-- [Saklain](https://github.com/SaklainTheSpellbinder)
-- [Arana](https://github.com/Ramisaraidah)
-- [Mufeed](https://github.com/paajnW)
 
 ## Installation
 
